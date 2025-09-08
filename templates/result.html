@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h5 mb-3">Kết quả</h2>
+
+        {% if single %}
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Kết luận
+            <span class="badge bg-primary rounded-pill">{{ result.label }}</span>
+          </li>
+          <li class="list-group-item">Xác suất ác tính (malignant): {{ '{:.4f}'.format(result.proba_malignant) }}</li>
+          <li class="list-group-item">Xác suất lành tính (benign): {{ '{:.4f}'.format(result.proba_benign) }}</li>
+        </ul>
+        <a href="{{ url_for('index') }}" class="btn btn-link mt-3">← Quay lại</a>
+        {% endif %}
+
+        {% if batch %}
+          <div class="table-responsive">
+            {{ table | safe }}
+          </div>
+          {% if download_path %}
+            <a class="btn btn-primary mt-3" href="/{{ download_path }}">Tải về toàn bộ kết quả</a>
+          {% endif %}
+          <a href="{{ url_for('index') }}" class="btn btn-link mt-3">← Quay lại</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
