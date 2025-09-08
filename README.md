@@ -52,3 +52,7 @@ mean radius, mean texture, mean perimeter, mean area, mean smoothness, ..., wors
   - Chỉnh sửa `train_model.py` để đọc dữ liệu của bạn (CSV/Parquet…) và huấn luyện lại.
   - Đảm bảo **thứ tự và tên cột** được ghi vào `meta.json` (biến `feature_names`) để Flask biết cách nhận dữ liệu đầu vào.
 - Với dữ liệu y tế thật, cần xem xét chuẩn hoá, xử lý mất cân bằng, đánh giá mô hình nghiêm ngặt (ROC-AUC, calibration,…).
+
+## Kết quả
+![Image1](https://github.com/Pangorin/breast-cancer-prediction/blob/main/images/Screenshot%202025-09-08%20at%2011.25.16.png)
+![Image2](https://github.com/Pangorin/breast-cancer-prediction/blob/main/images/Screenshot%202025-09-08%20at%2011.25.46.png)
